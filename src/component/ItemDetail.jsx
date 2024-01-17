@@ -3,23 +3,28 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from "./Header";
 import './ItemDetail.css';
+import {useLoading} from './LoadingContext'
 
 const ItemDetail = () => {
   const [item, setItem] = useState(null);
   const { id } = useParams();
+  const  {setLoading } = useLoading(); // 로딩 창
 
   useEffect(() => {
+    setLoading(true);
     axios.get(`https://fakestoreapi.com/products/${id}`)
       .then(response => {
         setItem(response.data);
+        setLoading(false);
       })
       .catch(error => {
         console.error("Error fetching data: ", error);
+        setLoading(false);
       })
-  }, [id]);
+  }, [id, setLoading]);
 
   if (!item) {
-    return <p>Loading...</p>;
+    return null;
   }
 
   return (

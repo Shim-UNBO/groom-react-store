@@ -4,7 +4,6 @@ import Header from "./Header";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {useLoading} from './LoadingContext'
-import Spinner from './Spinner';
 
 const MainPage = () => {
   const [products, setProducts] = useState([]); //  상품 목록 상태
@@ -29,7 +28,6 @@ const MainPage = () => {
 
     return (
         <div>   
-            {loading && <Spinner />}
         <Header />
         {error && <p>{error}</p>}
             <div className="product-list">
