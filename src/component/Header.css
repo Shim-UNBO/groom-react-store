@@ -1,0 +1,41 @@
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;align-items: center;
+}
+
+.logo h1 {
+margin: 0;
+font-size: 24px;
+}
+
+.navigation ul {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+}
+
+.navigation ul li {
+margin: 0 10px;
+}
+
+.navigation ul li a {
+text-decoration: none;
+color: #333;
+font-size: 16px;
+}
+
+.search-bar input[type="text"] {
+border: 1px solid #ddd;
+padding: 8px;
+border-radius: 4px;
+}
+
+.cart-icon a {
+text-decoration: none;
+color: #333;
+font-size: 16px;
+}
